@@ -404,7 +404,7 @@ class Line(object):
           :rtype: float
         """
         # --------------------------------------------------------------
-        # TODO: 6.
+        # DONE: 6.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -416,7 +416,7 @@ class Line(object):
             slope = (self.end.y - self.start.y) /(self.end.x - self.start.x)
             return slope
         else:
-            return
+            return math.inf
 
     def length(self):
         """

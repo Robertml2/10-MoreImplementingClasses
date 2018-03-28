@@ -147,6 +147,8 @@ class CapitalT(object):
         self.height = height
         self.letter_thickness = letter_thickness
 
+        corner1 = rg.Point((self.intersection_center.x-intersection_center.x)/2, (self.intersection_center.y -intersection_center.y)/2)
+
 
     def attach_to(self, window):
         """
