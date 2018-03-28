@@ -412,8 +412,11 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
-        slope = (self.end.y - self.start.y) /(self.end.x-1 - self.start.x)
-        return slope
+        if self.end.x - self.start.x > 0:
+            slope = (self.end.y - self.start.y) /(self.end.x - self.start.x)
+            return slope
+        else:
+            return
 
     def length(self):
         """
@@ -669,6 +672,7 @@ class Line(object):
         # and (usually) adequate to distinguish numbers that really
         # are different from each other.
         ################################################################
+
 
     def reset(self):
         """
