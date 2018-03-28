@@ -182,7 +182,7 @@ class CapitalT(object):
           :type window: rg.RoseWindow
         """
         # --------------------------------------------------------------
-        # TODO: 4.
+        # DONE: 4.
         #   READ the above specification, including the Example.
         #   Implement and test this method by looking at the console and
         #     the graphics window (compare it to simple_t.pdf)
@@ -217,6 +217,14 @@ class CapitalT(object):
         #     run_test method in main. Compare the graphics window to
         #     set_colors.pdf.
         # --------------------------------------------------------------
+        self.h_rect.fill_color = fill_color
+        self.v_rect.fill_color = self.set_color
+        self.h_rect.outline_color = outline_color
+        self.v_rect.outline_color = outline_color
+        window = rg.RoseWindow()
+        self.h_rect.attach_to(window)
+        self.v_rect.attach_to(window)
+        window.render()
 
     def move_by(self, dx, dy):
         """
