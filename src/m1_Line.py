@@ -412,7 +412,7 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
-        slope = (self.end.y+1 - self.start.y) /(self.end.x+1 - self.start.x)
+        slope = (self.end.y - self.start.y) /(self.end.x-1 - self.start.x)
         return slope
 
     def length(self):
@@ -519,7 +519,7 @@ class Line(object):
           :rtype: Line:
         """
         # --------------------------------------------------------------
-        # TODO: 9.
+        # DONE: 9.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -531,7 +531,10 @@ class Line(object):
         y = self.end.y +other_line.end.y
         x2 = self.start.x + other_line.start.x
         y2 = self.start.y + other_line.start.y
-        new_end Point(x, y)
+        new_end = Point(x, y)
+        new_start = Point(x2, y2)
+        new_line = Line(new_start, new_end)
+        return new_line
 
     def line_minus(self, other_line):
         """
@@ -558,7 +561,7 @@ class Line(object):
           :rtype: Line:
         """
         # --------------------------------------------------------------
-        # TODO: 10.
+        # DONE: 10.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -566,6 +569,14 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
+        x = self.end.x - other_line.end.x
+        y = self.end.y - other_line.end.y
+        x2 = self.start.x - other_line.start.x
+        y2 = self.start.y - other_line.start.y
+        new_end = Point(x, y)
+        new_start = Point(x2, y2)
+        new_line = Line(new_start, new_end)
+        return new_line
 
     def midpoint(self):
         """
@@ -585,7 +596,7 @@ class Line(object):
           :rtype: Point
         """
         # --------------------------------------------------------------
-        # TODO: 11.
+        # DONE: 11.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -593,6 +604,9 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
+        new_point = (self.start.x +self.end.x)/2, (self.start.y +self.end.y)/2
+        return new_point
+
 
     def is_parallel(self, line2):
         """
