@@ -16,7 +16,7 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
 
-    #run_test_simple_t()
+    run_test_simple_t()
     # run_test_set_colors()
     # run_test_move_by()
     # run_test_clone()
@@ -137,7 +137,7 @@ class CapitalT(object):
           :type letter_thickness:   int
         """
         # --------------------------------------------------------------
-        # TODO: 3.
+        # DONE: 3.
         #   READ the above specification, including the Example.
         #   Implement this method
         #   Note: you will need to also implement attach_to before testing
@@ -147,7 +147,20 @@ class CapitalT(object):
         self.height = height
         self.letter_thickness = letter_thickness
 
-        corner1 = rg.Point((self.intersection_center.x-intersection_center.x)/2, (self.intersection_center.y -intersection_center.y)/2)
+        x = intersection_center.x - width/2
+        y = intersection_center.y + letter_thickness/2
+        x2 = intersection_center.x + width/2
+        y2 = intersection_center.y - letter_thickness/2
+
+        self.h_rect = rg.Rectangle(rg.Point(x,y), rg.Point(x2, y2))
+
+        m = intersection_center.x - letter_thickness/2
+        n = intersection_center.y - letter_thickness/2
+        m2 = intersection_center.x + letter_thickness/2
+        n2 = intersection_center.y + height - letter_thickness/2
+
+        self.v_rect = rg.Rectangle(rg.Point(m,n), rg.Point(m2, n2))
+
 
 
     def attach_to(self, window):
@@ -174,6 +187,8 @@ class CapitalT(object):
         #   Implement and test this method by looking at the console and
         #     the graphics window (compare it to simple_t.pdf)
         # --------------------------------------------------------------
+        self.v_rect.attach_to(window)
+        self.h_rect.attach_to(window)
 
     def set_colors(self, fill_color, outline_color):
         """
