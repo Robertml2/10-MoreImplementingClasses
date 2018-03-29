@@ -413,7 +413,7 @@ class Line(object):
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
         if self.end.x - self.start.x == 0:
-            return  math.inf
+            return math.inf
         else:
             slope = (self.end.y - self.start.y) / (self.end.x - self.start.x)
             return slope
@@ -638,7 +638,7 @@ class Line(object):
           :rtype: bool
         """
         # --------------------------------------------------------------
-        # TODO: 12.
+        # DONE: 12.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
