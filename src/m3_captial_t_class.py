@@ -285,7 +285,12 @@ class CapitalT(object):
         #     clone.pdf.
         # --------------------------------------------------------------
         t = CapitalT(self.intersection_center, self.width, self.height, self.letter_thickness)
-        t2 =
+        self.h_rect.outline_color = t
+        self.v_rect.outline_color = t
+        self.h_rect.fill_color = t
+        self.v_rect.fill_color = t
+
+
 
 
 # ----------------------------------------------------------------------
