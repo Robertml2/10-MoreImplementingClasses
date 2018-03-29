@@ -718,13 +718,8 @@ class Line(object):
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
 
-        x = self.start.x
-        y = self.start.y
-        start = Point(x, y)
-        x2 = self.end.x
-        y2 = self.end.y
-        end = Point(x2, y2)
-        Line(start, end)
+
+        Line(self.start, self.end)
 
 
 ########################################################################
