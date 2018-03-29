@@ -284,8 +284,8 @@ class CapitalT(object):
         #     run_test method in main. Compare the graphics window to
         #     clone.pdf.
         # --------------------------------------------------------------
-        CapitalT(self.intersection_center, self.width, self.height, self.letter_thickness)
-        CapitalT.set_colors(fill_color, outline_color)
+        t = CapitalT(self.intersection_center, self.width, self.height, self.letter_thickness)
+        t2 =
 
 
 # ----------------------------------------------------------------------
