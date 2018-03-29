@@ -412,11 +412,11 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
-        if self.end.x - self.start.x > 0:
-            slope = (self.end.y - self.start.y) /(self.end.x - self.start.x)
-            return slope
+        if self.end.x - self.start.x == 0:
+            return  math.inf
         else:
-            return math.inf
+            slope = (self.end.y - self.start.y) / (self.end.x - self.start.x)
+            return slope
 
     def length(self):
         """
@@ -607,7 +607,7 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
-        new_point = (self.start.x +self.end.x)/2, (self.start.y +self.end.y)/2
+        new_point = Point((self.start.x +self.end.x)/2, ((self.start.y +self.end.y)/2))
         return new_point
 
 
@@ -662,7 +662,7 @@ class Line(object):
         #   respectively (hence NOT equal).
         #   Try it out if you don't believe me!
         #
-        # IMPORTANT BOTTOM-LINE:  When you want to test whether
+        # IMPORTANT BOTTOM-LINE:https://github.com/Robertml2/12-MoreSequences.git  When you want to test whether
         # two FLOATING POINT numbers  a  and  b  are the same,
         #   DON'T use:               a == b
         #   INSTEAD use:  round(a, 12) == round(b, 12)
@@ -672,6 +672,10 @@ class Line(object):
         # and (usually) adequate to distinguish numbers that really
         # are different from each other.
         ################################################################
+        if round(self.slope(), 12) == round(line2.slope(), 12):
+            return True
+        else:
+            return False
 
 
 
