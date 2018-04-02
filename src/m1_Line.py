@@ -718,8 +718,7 @@ class Line(object):
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
 
-
-        Line(self.start, self.end)
+        return repr(Line)
 
 
 ########################################################################
