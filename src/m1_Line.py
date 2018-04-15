@@ -176,7 +176,7 @@ class Point(object):
 ########################################################################
 class Line(object):
     """ Represents a line segment in 2-dimensional space. """
-    instance = None
+
 
     def __init__(self, start, end):
         """
@@ -230,6 +230,8 @@ class Line(object):
         self.start = start.clone()
         self.end = end.clone()
         self.num_clones = 0
+        self.start_origin = start.clone()
+        self.end_origin = end.clone()
 
 
 
@@ -712,7 +714,7 @@ class Line(object):
             print(line2)  # Should print: Line[(0, 1), (10, 20)]
         """
         # --------------------------------------------------------------
-        # TODO: 13.
+        # DONE: 13.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -720,9 +722,10 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
-        line = Line(self.start, self.end)
-        self.reset = Line(self.start, self.end)
-        return line
+
+        self.start = self.start_origin
+        self.end = self.end_origin
+
 
 
 
