@@ -176,6 +176,7 @@ class Point(object):
 ########################################################################
 class Line(object):
     """ Represents a line segment in 2-dimensional space. """
+    instance = None
 
     def __init__(self, start, end):
         """
@@ -229,6 +230,8 @@ class Line(object):
         self.start = start.clone()
         self.end = end.clone()
         self.num_clones = 0
+
+
 
 
     def __repr__(self):
@@ -717,8 +720,12 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
+        line = Line(self.start, self.end)
+        self.reset = Line(self.start, self.end)
+        return line
 
-        return repr(Line)
+
+
 
 
 ########################################################################
